@@ -22,6 +22,7 @@ namespace MouseWithAccelerometer
         string RxString;
         bool btConnectIsPressed = false;
         bool controlIsEnabled = false;
+        
 
         public Form1()
         {

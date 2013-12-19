@@ -9,7 +9,12 @@ int readings[numReadings];      // the readings from the analog input
 int index = 0;                  // the index of the current reading
 int total = 0;                  // the running total
 int average = 0;                // the average
-int target = 0;
+
+
+int maxVal;
+int posVal;
+int minVal;
+
 boolean itIsPressed = false;
 
 int loopCount = 0;
@@ -21,21 +26,20 @@ void setup()
   accelero.setARefVoltage(3.3);                   //sets the AREF voltage to 3.3V
   accelero.setSensitivity(HIGH);                   //sets the sensitivity to +/-6G
   accelero.calibrate();
+  accelero.setAveraging(1);
 }
 
 void loop()
 {
-  accelero.setAveraging(1);
-  accelero.getAccelXYZ(&x, &y, &z);
-  //orient = accelero.getOrientation();
-  target = 140;
   t = accelero.getTotalVector();
+  
   
   // subtract the last reading:
   total = total - readings[index];         
   // read from the sensor:  
-  readings[index] = t; 
-  // add the reading to the total:
+  readings[index] = t;
+  
+    // add the reading to the total:
   total = total + readings[index];       
   // advance to the next position in the array:  
   index = index + 1;    
@@ -43,8 +47,24 @@ void loop()
   // if we're at the end of the array...
   if (index >= numReadings)              
     // ...wrap around to the beginning: 
-    index = 0;                           
-
+    index = 0;         
+    
+  amp = max_pos - min_pos;
+  
+  if(t<min_pos)
+  {
+    min_pos = t;
+    max_pos = t + amp;
+  }
+  if(t>max_pos)
+  {
+    //Click();
+  }
+      
+      
+  
+                  
+  
   // calculate the average:
   average = total / numReadings;
 
@@ -65,3 +85,4 @@ void loop()
   // send it to the computer as ASCII digits
   delay(50);        // delay in between reads for stability     
 }
+
