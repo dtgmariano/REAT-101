@@ -50,31 +50,31 @@
 \pagestyle{fancy} % All pages have headers and footers
 \fancyhead{} % Blank out the default header
 \fancyfoot{} % Blank out the default footer
-\fancyhead[C]{PPGEB - FEELT - UFU $\bullet$ dezembro/2013} % Custom header text
+\fancyhead[C]{PPGEB - FEELT - UFU $\bullet$ 2013/2} % Custom header text
 \fancyfoot[RO,LE]{\thepage} % Custom footer text
 
-\usepackage[utf8x]{inputenc}
-
+\usepackage[brazilian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 \usepackage{graphicx}
 \graphicspath{{imgs/}}
 
 \usepackage{listings}
 \usepackage{xcolor}
-\usepackage[portuguese]{babel}
 
-\lstdefinestyle{sharpc}{language=[Sharp]C, frame=lr, rulecolor=\color{blue!80!black}, breaklines=true, basicstyle=\tiny}
+\lstdefinestyle{sharpc}{language=[Sharp]C, frame=lr, rulecolor=\color{blue!80!black}, breaklines=true}
 
 %----------------------------------------------------------------------------------------
 %	TITLE SECTION
 %----------------------------------------------------------------------------------------
 
-\title{\vspace{-15mm}\fontsize{24pt}{10pt}\selectfont\textbf{Desenvolvimento de um recurso de autocomplemento para um software de CAA, destinado para pacientes com limitação motora severa.}} % Article title
+\title{\vspace{-15mm}\fontsize{24pt}{10pt}\selectfont\textbf{Desenvolvimento de um recurso de previsão de texto para um software de CAA, destinado para pacientes com limitação motora severa.}} % Article title
 
 \author{
 \large
-\textsc{CURTT JR., FERREIRA L.C.V., LIMA M.A.B., MARIANO D.T.G., NAVES E.L.M.}\\[2mm] % Your name
-\normalsize Laboratório de Engenharia Biomédica\\\normalsize Núcleo de Tecnologias Assistivas\\\normalsize Universidade Federal de Uberlândia\\ \normalsize Uberlândia-MG, Brasil \\ % Your institution
-\normalsize {jrcurttjr@msn.com, lcv.ferreira@yahoo.com.br, borba.lima@hotmail.com, dtgmariano@gmail.com} % Your email address
+\textsc{CURTT J.R., FERREIRA L.C.V., LIMA M.A.B., MARIANO D.T.G., NAVES E.L.M.}\\[2mm] % Your name
+\normalsize \\Laboratório de Engenharia Biomédica \\Faculdade de Engenharia Elétrica \\Núcleo de Tecnologias Assistivas \\Universidade Federal de Uberlândia\\ \normalsize Uberlândia-MG, Brasil \\ % Your institution
+\normalsize {jrcurttjr@msn.com, lcv.ferreira@yahoo.com.br, borba.lima@hotmail.com, dtgmariano@gmail.com}
 \vspace{-5mm}
 }
 \date{}
@@ -82,9 +82,7 @@
 %----------------------------------------------------------------------------------------
 
 \begin{document}
-
 \maketitle % Insert title
-
 \thispagestyle{fancy} % All pages have headers and footers
 
 %----------------------------------------------------------------------------------------
@@ -94,12 +92,11 @@
 
 \begin{abstract}
 \noindent
-Predição de texto é uma das técnicas mais utilizadas para melhorar a taxa de comunicação em comunicação aumentativa e alternativa. Sistemas de previsão são tradicionalmente usados ​​por pessoas com deficiencia (por exemplo, as pessoas com deficiencias motoras e de fala).  
-Este artigo apresenta o desenvolvimento de uma técnica de previsão de texto. 
+Predição de texto é uma das técnicas mais utilizadas para melhorar a taxa de comunicação em comunicação aumentativa e alternativa. Sistemas de previsão são tradicionalmente usados por pessoas com deficiência (por exemplo, as pessoas com deficiencias motoras e de fala). Este artigo apresenta o desenvolvimento de uma ferramenta de previsão de texto para um software de comunicação alternativa e aumentada, voltado para pacientes portadores de disfunções motoras graves.
 \end{abstract}
 
 %----------------------------------------------------------------------------------------
-%	ARTICLE CONTENTS
+%        ARTICLE CONTENTS
 %----------------------------------------------------------------------------------------
 
 \begin{multicols}{2} % Two-column layout throughout the main article text
@@ -119,6 +116,7 @@ Faz-se necessário realizar ou promover a pesquisa e o desenvolvimento, bem como
 Por assim ser, há a necessidade de se desenvolver instrumentos que facilitem à socialização destas pessoas com deficiência, seja através da forma mais simples ou da forma mais complexa (cartilhas de comunicação, ambientes adaptados, softwares, hardwares, etc.) estes instrumentos são conhecidos como tecnologia assistiva [7].
 \\\\
 Desta forma, tecnologia assistiva é qualquer produto, instrumento, equipamento ou sistema técnico utilizado por uma pessoa incapacitada, que se destina a prevenir, compensar, monitorizar, aliviar ou neutralizar a incapacidade [8].
+\\\\
 Os recursos e serviços de tecnologia assistiva são organizados ou classificados de acordo com objetivos funcionais a que se destinam, tais como mobilidade, adequação postural, comunicação, recursos para cegos ou pessoas de baixa visão, para surdos ou pessoas com perdas auditivas, instrumentos que promovam independência em atividades da vida diária, recursos para educação, recreação, acessibilidade arquitetônica, adaptações de veículos, recursos para acesso ao computador, órteses, próteses e outros [9].
 \\\\
 Recursos de comunicação podem ser dos mais variados tipos. Projeta-se e constrói-se um recurso considerando as habilidades do usuário com o objetivo de ajudá-lo a superar sua deficiência. Um recurso após ser desenvolvido e aplicado poderá ser então aperfeiçoado, considerando as dificuldades de adaptação do indivíduo [9]. 
@@ -128,39 +126,46 @@ Para atender pessoas sem fala, sem escrita funcional ou em defasagem entre sua n
 \subsection{Disfunções motoras severas}
 Distúrbios neurológicos como a esclerose lateral amiotrófica (ELA) ou outras doenças musculares progressivas, conduzem frequentemente esses indivíduos à paralisia motora, inclusive com prejuízo a fala. Tornam-se, portanto, altamente limitados para suas atividades, inclusive com privação de suas vontades, devido à perda de comunicação.
 \\\\
-Esta patologia atinge cerca de 1 a 3 novos casos por cada 100,000 habitantes anualmente, tendo uma prevalência detida entre os 3 e os 7 por 100,000 habitantes/ano. Ainda por razões desconhecidas, o sexo masculino tem um predominância ligeiramente superior quando comparado com o feminino, com uma proporção M:F de 1,5:1 [10]. Habitualmente a idade média de aparecimento da doença ocorre entre os 55-65 anos de idade, embora em  alguns casos, cerca de 5\% possa manifestar-se a partir da segunda década de vida [11].
+Esta patologia atinge cerca de 1 a 3 novos casos por cada 100,000 habitantes anualmente, tendo uma prevalência detida entre os 3 e os 7 por 100,000 habitantes/ano. Ainda por razões desconhecidas, o sexo masculino tem um predominância ligeiramente superior quando comparado com o feminino, com uma proporção M:F de 1,5:1 [10]. 
 \\\\
-Para alguns desses indivíduos o sistema de escaneamento é o único modo de acesso à comunicação verbal ou escrita. Esses fundamentos têm sido utilizados desde o início da década de 80: através de um sistema de varredura luminosa, um item é marcado na tela e então selecionado por um clique. A principal desvantagem desse método é a lentidão na comunicação com uma velocidade média de escaneamento entre 0,2 a 6 segundos [7].
+Habitualmente a idade média de aparecimento da doença ocorre entre os 55-65 anos de idade, embora em  alguns casos, cerca de 5\% possa manifestar-se a partir da segunda década de vida [11].
+\\\\
+Para alguns desses indivíduos o sistema de escaneamento é o único modo de acesso à comunicação verbal ou escrita. Esses fundamentos têm sido utilizados desde o início da década de 80: através de um sistema de varredura luminosa, um item é marcado na tela e então selecionado por um clique.
+\\\\
+A principal desvantagem desse método é a lentidão na comunicação com uma velocidade média de escaneamento entre 0,2 a 6 segundos [7].
 
-\subsection{Edith}
+\subsection{EDITH}
 O EDITH (acronismo francês para Ambiente de Teleação Digital para Pessoas com Disfunções), desenvolvido na Universidade Metz, França, é um software de CAA, desenvolvido para pessoas com Esclerose Lateral Amiotrofica.
 
 \begin{figure}[H]
 \label{fig:edith_menu}
   \caption{Menu do EDITH.}
   \centering
-    \includegraphics[scale = 0.18]{edith_menu.png}
+    \includegraphics[scale = 0.19]{edith_menu.png}
 \end{figure}
 
-Trata-se de um sistema de auxílio à comunicação destinada a pessoas com deficiências motoras severas e que não estão aptas a se comunicarem. Ele é composto por um software que integra diversos recursos para controle de um ambiente multimídia de comunicação. Para o sistema de seleção costuma-se aplicar o modo linha-coluna (ou coluna-linha), por proporcionar um menor dispêndio de esforço físico e mental nessas ações. O sistema de seleção pode também ser sequencial, se a disponibilidade de opções não for muito ampla. 
+\noindent Trata-se de um sistema de auxílio à comunicação destinada a pessoas com deficiências motoras severas e que não estão aptas a se comunicarem. Ele é composto por um software que integra diversos recursos para controle de um ambiente multimídia de comunicação. 
+\noindent \\\\Para o sistema de seleção costuma-se aplicar o modo linha-coluna (ou coluna-linha), por proporcionar um menor dispêndio de esforço físico e mental nessas ações. O sistema de seleção pode também ser sequencial, se a disponibilidade de opções não for muito ampla. 
 
 \begin{figure}[H]
 \label{fig:edith_tecladovirtual}
   \caption{Teclado virtual.}
   \centering
-    \includegraphics[scale = 0.18]{edith_tecladovirtual.png}
+    \includegraphics[scale = 0.19]{edith_tecladovirtual.png}
 \end{figure}
 
-É possível ajustar o parâmetro temporal de acordo com a personalidade e as habilidades físicas e cognitivas do usuário; pode ser diminuído quando o usuário adquirir experiência com a interface, ou aumentado, se houver deterioração da função por agravo da enfermidade. O sistema EDiTH foi projetado para computadores padrão IBM-PC e possui duas componentes principais: uma interface funcional e uma interface de configuração. A interface funcional oferece várias facilidades como avisos e chamadas sonoras do pessoal de enfermagem, leitura de textos e escrita de texto. A interface de configuração permite ao usuário ajustar a operação de diversas funcionalidades como tempo de varredura do teclado virtual, adicionar livros, filmes, músicas no banco de dados e cadastrar e-mails.
+\noindent É possível ajustar o parâmetro temporal de acordo com a personalidade e as habilidades físicas e cognitivas do usuário; pode ser diminuído quando o usuário adquirir experiência com a interface, ou aumentado, se houver deterioração da função por agravo da enfermidade. 
+
+\noindent \\O sistema EDITH foi projetado para computadores padrão IBM-PC e possui duas componentes principais: uma interface funcional e uma interface de configuração. A interface funcional oferece várias facilidades como avisos e chamadas sonoras do pessoal de enfermagem, leitura de textos e escrita de texto. A interface de configuração permite ao usuário ajustar a operação de diversas funcionalidades como tempo de varredura do teclado virtual, adicionar livros, filmes, músicas no banco de dados e cadastrar e-mails.
 
 \begin{figure}[H]
 \label{fig:edith_chamar}
   \caption{Módulo para chamada urgente.}
   \centering
-    \includegraphics[scale = 0.18]{edith_chamar.png}
+    \includegraphics[scale = 0.19]{edith_chamar.png}
 \end{figure}
 
-O software foi desenvolvido na plataforma de desenvolvimento .NET da Microsoft, utilizando linguagem computacional C\# (CSharp). O aplicativo possui um gerador de registros (log) que grava as ações desempenhadas pelo usuário durante a execução do programa. O objetivo de vários pesquisadores que atuam na área de tecnologia assistiva tem sido a de aperfeiçoar esses softwares para uma melhor adaptação do usuário com a interface, permitindo menor esforço físico e melhor aproveitamento desses recursos. Indivíduos com disfunções motoras associados a distúrbios da fala frequentemente utilizam-se de recursos de comunicação como o EDITH, contudo, devido a velocidade que a escrita é executada, às vezes por limitações físicas desses pacientes, esses dispositivos tornam essa capacidade de comunicação uma tarefa de difícil execução. 
+\noindent O software foi desenvolvido na plataforma de desenvolvimento .NET da Microsoft, utilizando linguagem computacional C\# (CSharp). O aplicativo possui um gerador de registros (log) que grava as ações desempenhadas pelo usuário durante a execução do programa. O objetivo de vários pesquisadores que atuam na área de tecnologia assistiva tem sido a de aperfeiçoar esses softwares para uma melhor adaptação do usuário com a interface, permitindo menor esforço físico e melhor aproveitamento desses recursos. Indivíduos com disfunções motoras associados a distúrbios da fala frequentemente utilizam-se de recursos de comunicação como o EDITH, contudo, devido a velocidade que a escrita é executada, às vezes por limitações físicas desses pacientes, esses dispositivos tornam essa capacidade de comunicação uma tarefa de difícil execução. 
 
 %------------------------------------------------
 \section{Métodos}
@@ -169,7 +174,7 @@ O software foi desenvolvido na plataforma de desenvolvimento .NET da Microsoft, 
 Esta é uma pesquisa do tipo experimental quantitativa, baseada em dados estatísticos. Com o objetivo de melhorar a velocidade de comunicação e diminuir esforços aos usuários do software EDITH, foi desenvolvido uma ferramenta “autocompletar” ao teclado virtual, com o intuito de exigir um menor número de cliques para digitar uma palavra. Para isto serão realizados alguns testes comparando a performance de usuários utilizando o recurso autocompletar e sem o mesmo. Os voluntários foram classificados como indivíduos saudáveis, não sendo portadores de nenhuma disfunção motora. 
 \\\\
 Para estipular a sentença a ser usada para o teste, optou-se pelo emprego de um pangrama. Um pangrama é uma frase com sentido em que são usadas todas as letras do alfabeto de determinada língua. O pangrama utilizado para o teste possui 42 letras, sendo expresso pela seguinte frase: "Um pequeno jabuti xereta viu dez cegonhas felizes". 
-
+\\\\
 Com base nos registros de eventos (log) do software, serão analisados os seguintes parâmetros oriundos da atividade de escrita com o software:
 \begin{itemize}
 \item Número de cliques executados pelo usuário;
@@ -208,7 +213,7 @@ Com base em sua estrutura, cada evento foi classificado nos seguintes tipos de a
   "Speech" significa que o botão para reproduzir em áudio a frase armazenada na caixa de texto.
 \end{itemize}
 
-Foram definidos como cliques do usuário todos os eventos disparados ("Key", "Backspace", "Column", "Space", "Speech", entre outros). A taxa de acerto foi definido como o total de caracteres digitados (associado aos eventos "Key" e "Space") subtraídos do número de caracteres que foram digitados de maneira errada. A taxa de erro, composta pelo número de caracteres digitados erroneamente, está associado ao disparo do evento "Backspace".
+\noindent Foram definidos como cliques do usuário todos os eventos disparados ("Key", "Backspace", "Column", "Space", "Speech", entre outros). A taxa de acerto foi definido como o total de caracteres digitados (associado aos eventos "Key" e "Space") subtraídos do número de caracteres que foram digitados de maneira errada. A taxa de erro, composta pelo número de caracteres digitados erroneamente, está associado ao disparo do evento "Backspace".
 A sensibilidade das letras serem maiúsculas ou minúsculas foi ignorada para esta aplicação, uma vez que este fator não atrapalhar o desempenho da comunicação.
 
 %------------------------------------------------
@@ -255,7 +260,7 @@ Erro (\%) & 3.92 &\ 39.13\\
 \end{tabular}
 \end{table}
 
-Com base dos dados foram construídos os seguintes gráficos para comparação entre as parâmetros estatísticos dos experimentos sem o uso da ferramenta de autocomplemento e com o seu uso:
+\noindent Com base dos dados foram construídos os seguintes gráficos para comparação entre as parâmetros estatísticos dos experimentos sem o uso da ferramenta de autocomplemento e com o seu uso:
 
 \begin{figure}[H]
 \label{fig:graph_tx}
@@ -294,20 +299,20 @@ Com base dos dados foram construídos os seguintes gráficos para comparação e
 
 %-----------------------------------------------
 \section{Discussão}
-Os resultados apontaram que o recurso de autocomplemento, na atual configuração, ainda não está adequado para uso. O aumento de tempo de 39\% e do número de cliques de 21\% para escrever a frase pré-determinada, pode ser interpretado como ineficiência da atual ferramenta. Entretanto, tal problema pode ser justificado pelo fato de o recurso de autocomplemento selecionar palavras independente da relevância sintática que esta possui dentro da frase. 
-\\\\
-A dificuldade de se encontrar dicionários da lingua portuguesa, com valores de relevância pré-determinados, obrigou o desenvolvimento de um banco de dados com palavras sem atribuição deste atributo. Dessa forma, a busca por palavras no banco de dados se restringe a palavras iniciadas pelos caracteres digitados pelo usuário. 
-\\\\
-Para um caso em que o usuário digite os caracteres 'A' e 'B', serão retornadas algumas palavras pertencente ao espaço amostral de palavras do dicionário, iniciadas por "AB", independente da frequência com que a palavra é utilizada ou de seu contexto sintático. Isso acarreta no incremento da probabilidade do recurso autocompletar sugerir palavras que não atendam à necessidade do usuário, uma vez que a ferramenta limita o número de palavras sugeridas, afim de evitar um grande consumo de tempo durante a varredura por estas.
-\\\\
-O recurso instalado nesta aplicação é uma ferramenta estática, uma vez que não utiliza estratégias computacionais que possibilitem a aprendizagem do sistema, de forma a ajustar o atributo "peso" das palavras do dicionário.
-\\\\
-Em detrimento do aumento da quantidade de cliques efetuados pelo usuário, o número de caracteres necessários para gerar a sentença foi reduzido para um valor em torno de 7\%. Tal fator aponta o potencial da ferramenta que necessita de estratégias mais adequadas para atenuar os problemas detectados nos resultados do experimento.
-\\\\
-Após o experimento a busca por estratégias de análise de contexto, dicionários compostos por palavras com pesos associados a sua relevância sintática ou frequência de uso, são as possibilidades mais viáveis para que a melhoria do uso do sistema tenha êxito.
+Os resultados apontaram que o recurso de autocomplemento, na atual configuração, ainda não está adequado para uso. O aumento de tempo de 39\% e do número de cliques de 21\% para escrever a sentença podem ser interpretadas como ineficiência da atual ferramenta. Entretanto, tal problema pode ser justificado pelo fato de o recurso de autocomplemento selecionar palavras independente da relevância sintática que esta possui dentro da frase. 
+
+\noindent \\A dificuldade de se encontrar dicionários da lingua portuguesa, com valores de relevância pré-determinados, obrigou o desenvolvimento de um banco de dados com palavras sem atribuição deste atributo. Dessa forma, a busca por palavras no banco de dados se restringe a palavras iniciadas pelos caracteres digitados pelo usuário. 
+
+\noindent \\Para um caso em que o usuário digite os caracteres 'A' e 'B', serão retornadas algumas palavras pertencente ao espaço amostral de palavras do dicionário, iniciadas por "AB", independente da frequência com que a palavra é utilizada ou de seu contexto sintático. Isso acarreta no incremento da probabilidade do recurso autocompletar sugerir palavras que não atendam à necessidade do usuário, uma vez que a ferramenta limita o número de palavras sugeridas, afim de evitar um grande consumo de tempo durante a varredura por estas.
+
+\noindent \\O recurso instalado nesta aplicação é uma ferramenta estática, uma vez que não utiliza estratégias computacionais que possibilitem a aprendizagem do sistema, de forma a ajustar o atributo "peso" das palavras do dicionário.
+
+\noindent \\Em detrimento do aumento da quantidade de cliques efetuados pelo usuário, o número de caracteres necessários para gerar a sentença foi reduzido para um valor em torno de 7\%. Tal fator aponta o potencial da ferramenta que necessita de estratégias mais adequadas para atenuar os problemas detectados nos resultados do experimento.
+
+\noindent \\Após o experimento a busca por estratégias de análise de contexto, dicionários compostos por palavras com pesos associados a sua relevância sintática ou frequência de uso, são as possibilidades mais viáveis para que a melhoria do uso do sistema tenha êxito.
 
 %----------------------------------------------------------------------------------------
-%	REFERENCE LIST
+%        REFERENCE LIST
 %----------------------------------------------------------------------------------------
 
 \begin{thebibliography}{99} % Bibliography - this is intentionally simple in this template
