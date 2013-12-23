@@ -30,4 +30,3 @@ namespace Edith_Stats_App
     }
 }
 
-,

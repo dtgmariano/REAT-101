@@ -7,35 +7,33 @@ namespace Edith_Stats_App
 {
     public class Trial
     {
-        public List<Info> information;
+        public List<Info> informationContent;
 
-        public int sizeInfo;
-        public double duration;
-        public int numberOfCLicks;
+        public bool isAutoComplete;
+        public int informationSize;
+        public double trialDuration;
+        public int numberOfClicks;
 
-        public string charactersPressed;
+        public string trialTestSequence;
+
         public int numCharactersPressed;
         public int numWrongKeysPressed;
         public double accuracy, error;
 
-        public Trial(System.IO.StreamReader _log, string _testSequence)
+        public Trial(System.IO.StreamReader _log, string _trialTestSequence, bool _isAutoComplete)
         {
-            this.information = retrievesInfo(_log);
-            this.sizeInfo = this.information.Count();
-            this.duration = getDurationInMilliseconds(information[0], information[sizeInfo - 1]);
-            this.numberOfCLicks = this.sizeInfo - 1; //disregards trigger click (1st click)
-            this.charactersPressed = getCharPressed(this.information);
-            this.numCharactersPressed = this.charactersPressed.Length;
-            this.numWrongKeysPressed = this.numCharactersPressed - _testSequence.Length;
+            this.informationContent = retrievesInfo(_log);
+            this.trialTestSequence = _trialTestSequence;
+            this.isAutoComplete = _isAutoComplete;
+            this.informationSize = this.informationContent.Count() - 1;
+            this.trialDuration = getDurationOfTrial(informationContent[0], informationContent[informationSize]);
+            this.numberOfClicks = getNumberOfClicks();
+            this.numCharactersPressed = getNumberOfCharactersPressed();
+            this.numWrongKeysPressed = getNumberOfWrongCharactersPressed();
             this.accuracy = 100.0 * (double)(this.numCharactersPressed - this.numWrongKeysPressed) / (double)this.numCharactersPressed;
             this.error = 100.0 * (double)(this.numWrongKeysPressed) / (double)this.numCharactersPressed;
         }
 
-        private double getDurationInMilliseconds(Info firstInfo, Info lastInfo)
-        {
-            TimeSpan duration = lastInfo.datetime.Subtract(firstInfo.datetime);
-            return duration.TotalMilliseconds;
-        }
 
         private List<Info> retrievesInfo(System.IO.StreamReader log)
         {
@@ -47,33 +45,93 @@ namespace Edith_Stats_App
             return information;
         }
 
-        private string getCharPressed(List<Info> _information)
+        private double getDurationOfTrial(Info firstInfo, Info lastInfo)
         {
-            string keysSelected = "";
-
-            //for (int i = 1; i < sizeInfo; i++)
-            //{
-            //    if (_information[i].action == Action.Options.ActionKeySelectedFirstKeyboard
-            //        && _information[i].action != _information[i - 1].action)
-            //    {
-            //        keysSelected += _information[i].actionDetail;
-            //    }
-            //}
-
-            foreach (Info info in _information)
-            {
-                if (info.action == Action.Options.ActionKeySelectedFirstKeyboard && info.actionDetail!="None")
-                    keysSelected += info.actionDetail;
-            }
-            return keysSelected;
+            TimeSpan duration = lastInfo.datetime.Subtract(firstInfo.datetime);
+            return duration.TotalMilliseconds;
         }
 
-        private int calculateErrors(List<Info> _information)
+        private int getNumberOfClicks()
         {
-            int errorsCount = 0;
+            int numberOfClicks = 0;
 
+            if (this.isAutoComplete)
+            {
+                for (int i = 1; i < informationSize + 1; i++)
+                {
+                    if (informationContent[i].datetime != informationContent[i - 1].datetime)
+                    {
+                        numberOfClicks++;
+                    }
+                    else
+                    {
+                        //do notting
+                    }
+                }
+            }
+            else
+            {
+                numberOfClicks = informationSize;
+            }
 
-            _information[0].action = Action.Options.ActionBackspaceSelectedFirstKeyboard
+            return numberOfClicks;
+        }
+
+        private int getNumberOfCharactersPressed()
+        {
+            int numberOfCharactersPressed = 0;
+
+            if (this.isAutoComplete)
+            {
+                for (int i = 1; i < informationSize + 1; i++)
+                {
+                    if ((informationContent[i].action == Action.Options.ActionKeySelectedFirstKeyboard ||
+                        informationContent[i].action == Action.Options.ActionSpaceSelectedFirstKeyboard) &&
+                        (informationContent[i].actionDetail == "None"))
+                    {
+                        numberOfCharactersPressed++;
+                    }
+                    else
+                    {
+                        //do notting
+                    }
+                }
+            }
+            else
+            {
+                for (int i = 1; i < informationSize + 1; i++)
+                {
+                    if (informationContent[i].action == Action.Options.ActionKeySelectedFirstKeyboard ||
+                        informationContent[i].action == Action.Options.ActionSpaceSelectedFirstKeyboard)
+                    {
+                        numberOfCharactersPressed++;
+                    }
+                    else
+                    {
+                        //do notting
+                    }
+                }
+            }
+
+            return numberOfCharactersPressed;
+        }
+
+        private int getNumberOfWrongCharactersPressed()
+        {
+            int numberOfWrongCharactersPressed = 0;
+
+            for (int i = 1; i < informationSize + 1; i++)
+            {
+                if (informationContent[i].action == Action.Options.ActionBackspaceSelectedFirstKeyboard)
+                {
+                    numberOfWrongCharactersPressed++;
+                }
+                else
+                {
+                    //do notting
+                }
+            }
+            return numberOfWrongCharactersPressed;
         }
 
     }

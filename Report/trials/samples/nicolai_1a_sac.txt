@@ -1,0 +1,119 @@
+2013-12-20 18:34:14,559 ActionKeySelectedFirstKeyboard|Key : W
+2013-12-20 18:34:19,552 ActionColumnSelectedFirstKeyboard|Column10
+2013-12-20 18:34:19,817 ActionKeySelectedFirstKeyboard|Key : U
+2013-12-20 18:34:21,872 ActionColumnSelectedFirstKeyboard|Column3
+2013-12-20 18:34:26,264 ActionColumnSelectedFirstKeyboard|Column4
+2013-12-20 18:34:27,120 ActionKeySelectedFirstKeyboard|Key : M
+2013-12-20 18:34:33,672 ActionColumnSelectedFirstKeyboard|Column2
+2013-12-20 18:34:34,161 ActionSpaceSelectedFirstKeyboard|Key : Space
+2013-12-20 18:34:38,872 ActionColumnSelectedFirstKeyboard|Column6
+2013-12-20 18:34:39,929 ActionKeySelectedFirstKeyboard|Key : P
+2013-12-20 18:34:41,672 ActionColumnSelectedFirstKeyboard|Column3
+2013-12-20 18:34:42,392 ActionKeySelectedFirstKeyboard|Key : O
+2013-12-20 18:34:48,912 ActionColumnSelectedFirstKeyboard|Column1
+2013-12-20 18:34:51,696 ActionColumnSelectedFirstKeyboard|Column1
+2013-12-20 18:34:52,578 ActionBackspaceSelectedFirstKeyboard|Key : Backspace
+2013-12-20 18:34:56,064 ActionColumnSelectedFirstKeyboard|Column3
+2013-12-20 18:34:56,577 ActionKeySelectedFirstKeyboard|Key : E
+2013-12-20 18:34:59,320 ActionColumnSelectedFirstKeyboard|Column5
+2013-12-20 18:35:00,624 ActionKeySelectedFirstKeyboard|Key : Q
+2013-12-20 18:35:05,208 ActionColumnSelectedFirstKeyboard|Column10
+2013-12-20 18:35:05,713 ActionKeySelectedFirstKeyboard|Key : U
+2013-12-20 18:35:12,944 ActionColumnSelectedFirstKeyboard|Column3
+2013-12-20 18:35:13,441 ActionKeySelectedFirstKeyboard|Key : E
+2013-12-20 18:35:17,312 ActionColumnSelectedFirstKeyboard|Column8
+2013-12-20 18:35:17,944 ActionKeySelectedFirstKeyboard|Key : N
+2013-12-20 18:35:20,152 ActionColumnSelectedFirstKeyboard|Column3
+2013-12-20 18:35:21,369 ActionKeySelectedFirstKeyboard|Key : O
+2013-12-20 18:35:22,752 ActionColumnSelectedFirstKeyboard|Column2
+2013-12-20 18:35:23,537 ActionSpaceSelectedFirstKeyboard|Key : Space
+2013-12-20 18:35:32,680 ActionColumnSelectedFirstKeyboard|Column4
+2013-12-20 18:35:34,016 ActionKeySelectedFirstKeyboard|Key : J
+2013-12-20 18:35:36,776 ActionColumnSelectedFirstKeyboard|Column5
+2013-12-20 18:35:37,224 ActionKeySelectedFirstKeyboard|Key : A
+2013-12-20 18:35:41,672 ActionColumnSelectedFirstKeyboard|Column9
+2013-12-20 18:35:42,657 ActionKeySelectedFirstKeyboard|Key : B
+2013-12-20 18:35:47,944 ActionColumnSelectedFirstKeyboard|Column10
+2013-12-20 18:35:48,393 ActionKeySelectedFirstKeyboard|Key : U
+2013-12-20 18:35:52,728 ActionColumnSelectedFirstKeyboard|Column9
+2013-12-20 18:35:53,176 ActionKeySelectedFirstKeyboard|Key : T
+2013-12-20 18:35:56,880 ActionColumnSelectedFirstKeyboard|Column7
+2013-12-20 18:35:57,377 ActionKeySelectedFirstKeyboard|Key : I
+2013-12-20 18:36:04,048 ActionColumnSelectedFirstKeyboard|Column2
+2013-12-20 18:36:04,569 ActionSpaceSelectedFirstKeyboard|Key : Space
+2013-12-20 18:36:10,184 ActionColumnSelectedFirstKeyboard|Column8
+2013-12-20 18:36:11,552 ActionKeySelectedFirstKeyboard|Key : X
+2013-12-20 18:36:13,351 ActionColumnSelectedFirstKeyboard|Column3
+2013-12-20 18:36:14,297 ActionKeySelectedFirstKeyboard|Key : E
+2013-12-20 18:36:22,896 ActionColumnSelectedFirstKeyboard|Column6
+2013-12-20 18:36:23,433 ActionKeySelectedFirstKeyboard|Key : R
+2013-12-20 18:36:25,088 ActionColumnSelectedFirstKeyboard|Column3
+2013-12-20 18:36:25,480 ActionKeySelectedFirstKeyboard|Key : E
+2013-12-20 18:36:29,983 ActionColumnSelectedFirstKeyboard|Column9
+2013-12-20 18:36:30,328 ActionKeySelectedFirstKeyboard|Key : T
+2013-12-20 18:36:33,144 ActionColumnSelectedFirstKeyboard|Column5
+2013-12-20 18:36:33,497 ActionKeySelectedFirstKeyboard|Key : A
+2013-12-20 18:36:40,248 ActionColumnSelectedFirstKeyboard|Column2
+2013-12-20 18:36:40,689 ActionSpaceSelectedFirstKeyboard|Key : Space
+2013-12-20 18:36:47,391 ActionColumnSelectedFirstKeyboard|Column10
+2013-12-20 18:36:48,416 ActionKeySelectedFirstKeyboard|Key : V
+2013-12-20 18:36:51,920 ActionColumnSelectedFirstKeyboard|Column7
+2013-12-20 18:36:52,345 ActionKeySelectedFirstKeyboard|Key : I
+2013-12-20 18:36:57,280 ActionColumnSelectedFirstKeyboard|Column10
+2013-12-20 18:36:57,649 ActionKeySelectedFirstKeyboard|Key : U
+2013-12-20 18:37:00,480 ActionColumnSelectedFirstKeyboard|Column5
+2013-12-20 18:37:01,416 ActionKeySelectedFirstKeyboard|Key : D
+2013-12-20 18:37:03,592 ActionColumnSelectedFirstKeyboard|Column3
+2013-12-20 18:37:04,144 ActionKeySelectedFirstKeyboard|Key : E
+2013-12-20 18:37:07,136 ActionColumnSelectedFirstKeyboard|Column6
+2013-12-20 18:37:08,577 ActionKeySelectedFirstKeyboard|Key : Z
+2013-12-20 18:37:17,504 ActionColumnSelectedFirstKeyboard|Column7
+2013-12-20 18:37:19,403 ActionLeftSelectedFirstKeyboard|Key : Left
+2013-12-20 18:37:19,768 ActionLeftSelectedFirstKeyboard|Key : Left
+2013-12-20 18:37:20,192 ActionKeySelectedFirstKeyboard|Key : Y
+2013-12-20 18:37:26,144 ActionColumnSelectedFirstKeyboard|Column1
+2013-12-20 18:37:27,273 ActionBackspaceSelectedFirstKeyboard|Key : Backspace
+2013-12-20 18:37:32,152 ActionColumnSelectedFirstKeyboard|Column7
+2013-12-20 18:37:33,937 ActionLeftSelectedFirstKeyboard|Key : Left
+2013-12-20 18:37:35,672 ActionColumnSelectedFirstKeyboard|Column2
+2013-12-20 18:37:36,105 ActionSpaceSelectedFirstKeyboard|Key : Space
+2013-12-20 18:37:41,640 ActionColumnSelectedFirstKeyboard|Column7
+2013-12-20 18:37:42,497 ActionKeySelectedFirstKeyboard|Key : C
+2013-12-20 18:37:49,016 ActionColumnSelectedFirstKeyboard|Column1
+2013-12-20 18:37:50,009 ActionBackspaceSelectedFirstKeyboard|Key : Backspace
+2013-12-20 18:37:55,672 ActionColumnSelectedFirstKeyboard|Column8
+2013-12-20 18:37:57,537 ActionRightSelectedFirstKeyboard|Key : Right
+2013-12-20 18:37:57,825 ActionRightSelectedFirstKeyboard|Key : Right
+2013-12-20 18:37:58,112 ActionRightSelectedFirstKeyboard|Key : Right
+2013-12-20 18:38:00,656 ActionColumnSelectedFirstKeyboard|Column2
+2013-12-20 18:38:00,865 ActionSpaceSelectedFirstKeyboard|Key : Space
+2013-12-20 18:38:06,464 ActionColumnSelectedFirstKeyboard|Column7
+2013-12-20 18:38:07,401 ActionKeySelectedFirstKeyboard|Key : C
+2013-12-20 18:38:09,296 ActionColumnSelectedFirstKeyboard|Column3
+2013-12-20 18:38:09,521 ActionKeySelectedFirstKeyboard|Key : E
+2013-12-20 18:38:11,552 ActionColumnSelectedFirstKeyboard|Column3
+2013-12-20 18:38:13,161 ActionKeySelectedFirstKeyboard|Key : G
+2013-12-20 18:38:14,943 ActionColumnSelectedFirstKeyboard|Column3
+2013-12-20 18:38:15,968 ActionKeySelectedFirstKeyboard|Key : O
+2013-12-20 18:38:19,864 ActionColumnSelectedFirstKeyboard|Column8
+2013-12-20 18:38:20,465 ActionKeySelectedFirstKeyboard|Key : N
+2013-12-20 18:38:27,120 ActionColumnSelectedFirstKeyboard|Column2
+2013-12-20 18:38:28,512 ActionKeySelectedFirstKeyboard|Key : H
+2013-12-20 18:38:31,200 ActionColumnSelectedFirstKeyboard|Column5
+2013-12-20 18:38:31,568 ActionKeySelectedFirstKeyboard|Key : A
+2013-12-20 18:38:33,824 ActionColumnSelectedFirstKeyboard|Column4
+2013-12-20 18:38:34,065 ActionKeySelectedFirstKeyboard|Key : S
+2013-12-20 18:38:38,384 ActionColumnSelectedFirstKeyboard|Column8
+2013-12-20 18:38:39,281 ActionKeySelectedFirstKeyboard|Key : F
+2013-12-20 18:38:41,128 ActionColumnSelectedFirstKeyboard|Column3
+2013-12-20 18:38:41,505 ActionKeySelectedFirstKeyboard|Key : E
+2013-12-20 18:38:42,856 ActionColumnSelectedFirstKeyboard|Column2
+2013-12-20 18:38:43,809 ActionKeySelectedFirstKeyboard|Key : L
+2013-12-20 18:38:47,320 ActionColumnSelectedFirstKeyboard|Column7
+2013-12-20 18:38:47,560 ActionKeySelectedFirstKeyboard|Key : I
+2013-12-20 18:38:50,911 ActionColumnSelectedFirstKeyboard|Column6
+2013-12-20 18:38:52,241 ActionKeySelectedFirstKeyboard|Key : Z
+2013-12-20 18:38:53,944 ActionColumnSelectedFirstKeyboard|Column3
+2013-12-20 18:38:54,329 ActionKeySelectedFirstKeyboard|Key : E
+2013-12-20 18:38:56,648 ActionColumnSelectedFirstKeyboard|Column4
+2013-12-20 18:38:56,953 ActionKeySelectedFirstKeyboard|Key : S

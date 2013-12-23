@@ -36,14 +36,13 @@ namespace Edith_Stats_App
 
                     //testSequence = "UM PEQUENO JABUTI XERETA VIU DEZ CEGONHAS FELIZES";
 
-                    testSequence = "UMPEQUENOJABUTIXERETAVIUDEZCEGONHASFELIZES";
+                    testSequence = "UM PEQUENO JABUTI XERETA VIU DEZ CEGONHAS FELIZES";
                     hasAutoComplete = true;
 
-                    trial = new Trial(sr, testSequence);
+                    trial = new Trial(sr, testSequence, hasAutoComplete);
                     rtbInfo.AppendText(testSequence + "\n");
-                    rtbInfo.AppendText(trial.charactersPressed + "\n");
 
-                    foreach (Info info in trial.information)
+                    foreach (Info info in trial.informationContent)
                     {
                         rtbInfo.AppendText(info.datetime.ToString() + " " + info.action.ToString() + " " + info.actionDetail.ToString() + "\n");
                     }
@@ -78,20 +77,23 @@ namespace Edith_Stats_App
                 #region Resume Sheet
 
                 xlWorkSheet1.Name = "Resume";
-                xlWorkSheet1.Cells[1, 1] = "Duration (ms)";
-                xlWorkSheet1.Cells[2, 1] = "Number of clicks";
-                xlWorkSheet1.Cells[3, 1] = "Number of chars pressed";
-                xlWorkSheet1.Cells[4, 1] = "Number of wrong chars pressed";
-                xlWorkSheet1.Cells[5, 1] = "Accuracy(%)";
-                xlWorkSheet1.Cells[6, 1] = "Error(%)";
+                xlWorkSheet1.Cells[1, 1] = "Message test";
+                xlWorkSheet1.Cells[2, 1] = "Has Autocomplete? ";
+                xlWorkSheet1.Cells[3, 1] = "Duration (ms)";
+                xlWorkSheet1.Cells[4, 1] = "Number of clicks";
+                xlWorkSheet1.Cells[5, 1] = "Number of chars pressed";
+                xlWorkSheet1.Cells[6, 1] = "Number of wrong chars pressed";
+                xlWorkSheet1.Cells[7, 1] = "Accuracy(%)";
+                xlWorkSheet1.Cells[8, 1] = "Error(%)";
 
-
-                xlWorkSheet1.Cells[1, 2] = trial.duration;
-                xlWorkSheet1.Cells[2, 2] = trial.numberOfCLicks;
-                xlWorkSheet1.Cells[3, 2] = trial.numCharactersPressed;
-                xlWorkSheet1.Cells[4, 2] = trial.numWrongKeysPressed;
-                xlWorkSheet1.Cells[5, 2] = trial.accuracy;
-                xlWorkSheet1.Cells[6, 2] = trial.error;
+                xlWorkSheet1.Cells[1, 2] = trial.trialTestSequence;
+                xlWorkSheet1.Cells[2, 2] = trial.isAutoComplete.ToString();
+                xlWorkSheet1.Cells[3, 2] = trial.trialDuration;
+                xlWorkSheet1.Cells[4, 2] = trial.numberOfClicks;
+                xlWorkSheet1.Cells[5, 2] = trial.numCharactersPressed;
+                xlWorkSheet1.Cells[6, 2] = trial.numWrongKeysPressed;
+                xlWorkSheet1.Cells[7, 2] = trial.accuracy;
+                xlWorkSheet1.Cells[8, 2] = trial.error;
 
                 #endregion
 
@@ -106,15 +108,15 @@ namespace Edith_Stats_App
                 xlWorkSheet2.Cells[1, 6] = "Action";
                 xlWorkSheet2.Cells[1, 7] = "Action Detail";
 
-                for (int i = 0; i < trial.information.Count(); i++)
+                for (int i = 0; i < trial.informationContent.Count(); i++)
                 {
-                    xlWorkSheet2.Cells[(i + 2), 1] = trial.information[i].datetime.Date;
-                    xlWorkSheet2.Cells[(i + 2), 2] = trial.information[i].datetime.Hour;
-                    xlWorkSheet2.Cells[(i + 2), 3] = trial.information[i].datetime.Minute;
-                    xlWorkSheet2.Cells[(i + 2), 4] = trial.information[i].datetime.Second;
-                    xlWorkSheet2.Cells[(i + 2), 5] = trial.information[i].datetime.Millisecond;
-                    xlWorkSheet2.Cells[(i + 2), 6] = trial.information[i].action;
-                    xlWorkSheet2.Cells[(i + 2), 7] = trial.information[i].actionDetail;
+                    xlWorkSheet2.Cells[(i + 2), 1] = trial.informationContent[i].datetime.Date;
+                    xlWorkSheet2.Cells[(i + 2), 2] = trial.informationContent[i].datetime.Hour;
+                    xlWorkSheet2.Cells[(i + 2), 3] = trial.informationContent[i].datetime.Minute;
+                    xlWorkSheet2.Cells[(i + 2), 4] = trial.informationContent[i].datetime.Second;
+                    xlWorkSheet2.Cells[(i + 2), 5] = trial.informationContent[i].datetime.Millisecond;
+                    xlWorkSheet2.Cells[(i + 2), 6] = trial.informationContent[i].action;
+                    xlWorkSheet2.Cells[(i + 2), 7] = trial.informationContent[i].actionDetail;
                 }
 
                 #endregion
@@ -131,9 +133,11 @@ namespace Edith_Stats_App
 
 
                 int idx = 2;
-                foreach(Info info in trial.information)
+                foreach(Info info in trial.informationContent)
                 {
-                    if (info.action == Action.Options.ActionKeySelectedFirstKeyboard)
+                    if (info.action == Action.Options.ActionKeySelectedFirstKeyboard ||
+                        info.action == Action.Options.ActionSpaceSelectedFirstKeyboard && 
+                        info.actionDetail != "None")
                     {
                         xlWorkSheet3.Cells[idx, 1] = info.datetime.Date;
                         xlWorkSheet3.Cells[idx, 2] = info.datetime.Hour;
@@ -188,8 +192,8 @@ namespace Edith_Stats_App
         {
             try
             {
-                MessageBox.Show("Duration(ms): " + trial.duration
-                            + "\nNumber of clicks: " + trial.numberOfCLicks
+                MessageBox.Show("Duration(ms): " + trial.trialDuration
+                            + "\nNumber of clicks: " + trial.numberOfClicks
                             + "\nNumber of keys pressed: " + trial.numCharactersPressed
                             + "\nNumber of wrong keys pressed: " + trial.numWrongKeysPressed
                             + "\nAccuracy: " + trial.accuracy
