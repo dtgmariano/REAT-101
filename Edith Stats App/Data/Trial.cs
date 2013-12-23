@@ -87,7 +87,8 @@ namespace Edith_Stats_App
                 {
                     if ((informationContent[i].action == Action.Options.ActionKeySelectedFirstKeyboard ||
                         informationContent[i].action == Action.Options.ActionSpaceSelectedFirstKeyboard) &&
-                        (informationContent[i].actionDetail == "None"))
+                        (informationContent[i].actionDetail != "None") && 
+                        (informationContent[i].datetime != informationContent[i - 1].datetime))
                     {
                         numberOfCharactersPressed++;
                     }

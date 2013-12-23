@@ -11,22 +11,28 @@ namespace Edith_Stats_App
         {
             ActionBackspaceSelectedFirstKeyboard,
             ActionColumnSelectedFirstKeyboard,
+            ActionEndSelectedFirstKeyboard,
+            ActionHomeSelectedFirstKeyboard,
             ActionKeySelectedFirstKeyboard,
             ActionLeftSelectedFirstKeyboard,
+            ActionPageDownSelectedFirstKeyboard,
+            ActionPageUpSelectedFirstKeyboard,
+            ActionReturnSelectedFirstKeyboard,
             ActionRightSelectedFirstKeyboard,
-            ActionSpaceSelectedFirstKeyboard
-
+            ActionSaveSelectedFirstKeyboard,
+            ActionSpaceSelectedFirstKeyboard,
+            ActionSpeechSelectedFirstKeyboard
         }
 
-        public static readonly Dictionary<Options, string> OptionsTypes = new Dictionary<Options, string>()
-        {
-            {Options.ActionBackspaceSelectedFirstKeyboard,"Backspace"},
-            {Options.ActionColumnSelectedFirstKeyboard,"Column"},
-            {Options.ActionKeySelectedFirstKeyboard,"Key"},
-            {Options.ActionLeftSelectedFirstKeyboard,"Left"},
-            {Options.ActionRightSelectedFirstKeyboard,"Right"},
-            {Options.ActionSpaceSelectedFirstKeyboard,"Space"}
-        };
+        //public static readonly Dictionary<Options, string> OptionsTypes = new Dictionary<Options, string>()
+        //{
+        //    {Options.ActionBackspaceSelectedFirstKeyboard,"Backspace"},
+        //    {Options.ActionColumnSelectedFirstKeyboard,"Column"},
+        //    {Options.ActionKeySelectedFirstKeyboard,"Key"},
+        //    {Options.ActionLeftSelectedFirstKeyboard,"Left"},
+        //    {Options.ActionRightSelectedFirstKeyboard,"Right"},
+        //    {Options.ActionSpaceSelectedFirstKeyboard,"Space"}
+        //};
     }
 }
 

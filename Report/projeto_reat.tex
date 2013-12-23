@@ -50,7 +50,7 @@
 \pagestyle{fancy} % All pages have headers and footers
 \fancyhead{} % Blank out the default header
 \fancyfoot{} % Blank out the default footer
-\fancyhead[C]{PPGEB - FEELT - UFU $\bullet$ 2013/2} % Custom header text
+\fancyhead[C]{PPGEB - FEELT - UFU $\bullet$ dezembro/2013} % Custom header text
 \fancyfoot[RO,LE]{\thepage} % Custom footer text
 
 \usepackage[utf8]{inputenc}
@@ -60,13 +60,13 @@
 \usepackage{listings}
 \usepackage{xcolor}
 
-\lstdefinestyle{sharpc}{language=[Sharp]C, frame=lr, rulecolor=\color{blue!80!black}, breaklines=true}
+\lstdefinestyle{sharpc}{language=[Sharp]C, frame=lr, rulecolor=\color{blue!80!black}, breaklines=true, basicstyle=\tiny}
 
 %----------------------------------------------------------------------------------------
 %	TITLE SECTION
 %----------------------------------------------------------------------------------------
 
-\title{\vspace{-15mm}\fontsize{24pt}{10pt}\selectfont\textbf{Implementação de um sistema de auto completar em um software de CAA para pacientes com limitação motora severa}} % Article title
+\title{\vspace{-15mm}\fontsize{24pt}{10pt}\selectfont\textbf{Desenvolvimento de um recurso de autocomplemento para um software de CAA, destinado para pacientes com limitação motora severa.}} % Article title
 
 \author{
 \large
@@ -102,22 +102,35 @@ Uma das principais formas de socialização que o ser humano possui é a fala, q
 \begin{multicols}{2} % Two-column layout throughout the main article text
 
 \section{Introdução}
-\subsection{Panorama das tecnologias assistivas}
-Uma das principais formas de socialização que o ser humano possui é a fala, que lhe garante o entendimento por outros, de seus anseios e desejos. No Brasil, conforme o censo realizado em 2010 pelo IBGE existe cerca de 45,6 milhões de pessoas com deficiência, o que representa 23,9% da população brasileira, sendo que grande parte destas pessoas possui um ou mais tipos de deficiência, podendo ser física, visual, auditiva, intelectual ou de comunicação1.
-Ao analisar a vida cotidiana do ser humano, é possível dizer que uma gama de fatores podem influenciar suas atitudes e atividades diárias, seja no trabalho ou na vida social, para isto se faz necessário englobar uma análise ergonômica de suas atividades, para saber como estas situações, seja de forma positiva ou negativa, afetam o indivíduo nas questões físicas, sociais ou psicológicas.  A palavra Ergonomia é de origem grega sendo, ergo significando tarefa, por extensão trabalho, e nomos normas, regras2.
-Assim sendo ergonomia pode ser definida como uma abordagem científica que se fundamenta em conhecimentos interdisciplinares das ciências humanas para, de um lado, compatibilizar os produtos e as tecnologias com as características dos usuários e, de outro, humanizar o contexto sociotécnico de trabalho, adaptando-o tanto aos objetivos do sujeito e/ou grupo, quanto às exigências das tarefas3; 4. Com o estudo da ergonomia surge uma área de grande importância para a adaptação do deficiente à vida em sociedade, que é a tecnologia assistiva (TA), que é utilizado para identificar todo o arsenal de recursos e serviços que contribuem para proporcionar ou ampliar habilidades funcionais de pessoas com deficiência e consequentemente promover vida independente e inclusão. Podendo ser definido ainda como, uma ampla gama de equipamentos, serviços, estratégias e práticas concebidas e aplicadas para minorar os problemas funcionais encontrados pelos indivíduos com deficiências5.
-Faz-se necessário realizar ou promover a pesquisa e o desenvolvimento, bem como a disponibilidade e o emprego de novas tecnologias, inclusive as tecnologias da informação e comunicação, ajudas técnicas para locomoção, dispositivos e tecnologias assistivas, adequados a pessoas com deficiência, dando prioridade a tecnologias de custo acessível6.
-Por assim ser, há a necessidade de se desenvolver instrumentos que facilitem à socialização destas pessoas com deficiência, seja através da forma mais simples ou da forma mais complexa (cartilhas de comunicação, ambientes adaptados, softwares, hardwares, etc.) estes instrumentos são conhecidos como tecnologia assistiva7.
-Desta forma, tecnologia assistiva é qualquer produto, instrumento, equipamento ou sistema técnico utilizado por uma pessoa incapacitada, que se destina a prevenir, compensar, monitorizar, aliviar ou neutralizar a incapacidade8.
-Os recursos e serviços de tecnologia assistiva são organizados ou classificados de acordo com objetivos funcionais a que se destinam, tais como mobilidade, adequação postural, comunicação, recursos para cegos ou pessoas de baixa visão, para surdos ou pessoas com perdas auditivas, instrumentos que promovam independência em atividades da vida diária, recursos para educação, recreação, acessibilidade arquitetônica, adaptações de veículos, recursos para acesso ao computador, órteses, próteses e outros9.
-Recursos de comunicação podem ser dos mais variados tipos. Projeta-se e constrói-se um recurso considerando as habilidades do usuário com o objetivo de ajudá-lo a superar sua deficiência. Um recurso após ser desenvolvido e aplicado poderá ser então aperfeiçoado, considerando as dificuldades de adaptação do indivíduo9. 
-Para atender pessoas sem fala, sem escrita funcional ou em defasagem entre sua necessidade comunicativa e sua habilidade em falar e/ou escrever, são utilizados recursos conhecidos como comunicação aumentativa e alternativa (CAA). A CAA serve para expressar suas questões, desejos, sentimentos, entendimentos. A alta tecnologia dos vocalizadores (pranchas com produção de voz) ou o computador com softwares específicos garantem grande eficiência à função comunicativa5.
+\subsection{Tecnologias assistivas}
+Uma das principais formas de socialização que o ser humano possui é a fala, que lhe garante o entendimento por outros, de seus anseios e desejos. No Brasil, conforme o censo realizado em 2010 pelo IBGE existe cerca de 45,6 milhões de pessoas com deficiência, o que representa 23,9\% da população brasileira, sendo que grande parte destas pessoas possui um ou mais tipos de deficiência, podendo ser física, visual, auditiva, intelectual ou de comunicação [1].
+\\\\
+Ao analisar a vida cotidiana do ser humano, é possível dizer que uma gama de fatores podem influenciar suas atitudes e atividades diárias, seja no trabalho ou na vida social, para isto se faz necessário englobar uma análise ergonômica de suas atividades, para saber como estas situações, seja de forma positiva ou negativa, afetam o indivíduo nas questões físicas, sociais ou psicológicas.  A palavra Ergonomia é de origem grega sendo, ergo significando tarefa, por extensão trabalho, e nomos normas, regras [2].
+\\\\
+Assim sendo ergonomia pode ser definida como uma abordagem científica que se fundamenta em conhecimentos interdisciplinares das ciências humanas para, de um lado, compatibilizar os produtos e as tecnologias com as características dos usuários e, de outro, humanizar o contexto sociotécnico de trabalho, adaptando-o tanto aos objetivos do sujeito e/ou grupo, quanto às exigências das tarefas [3;4]. 
+\\\\
+Com o estudo da ergonomia surge uma área de grande importância para a adaptação do deficiente à vida em sociedade, que é a tecnologia assistiva (TA), que é utilizado para identificar todo o arsenal de recursos e serviços que contribuem para proporcionar ou ampliar habilidades funcionais de pessoas com deficiência e consequentemente promover vida independente e inclusão. Podendo ser definido ainda como, uma ampla gama de equipamentos, serviços, estratégias e práticas concebidas e aplicadas para minorar os problemas funcionais encontrados pelos indivíduos com deficiências [5].
+\\\\
+Faz-se necessário realizar ou promover a pesquisa e o desenvolvimento, bem como a disponibilidade e o emprego de novas tecnologias, inclusive as tecnologias da informação e comunicação, ajudas técnicas para locomoção, dispositivos e tecnologias assistivas, adequados a pessoas com deficiência, dando prioridade a tecnologias de custo acessível [6].
+\\\
+Por assim ser, há a necessidade de se desenvolver instrumentos que facilitem à socialização destas pessoas com deficiência, seja através da forma mais simples ou da forma mais complexa (cartilhas de comunicação, ambientes adaptados, softwares, hardwares, etc.) estes instrumentos são conhecidos como tecnologia assistiva [7].
+\\\\
+Desta forma, tecnologia assistiva é qualquer produto, instrumento, equipamento ou sistema técnico utilizado por uma pessoa incapacitada, que se destina a prevenir, compensar, monitorizar, aliviar ou neutralizar a incapacidade [8].
+Os recursos e serviços de tecnologia assistiva são organizados ou classificados de acordo com objetivos funcionais a que se destinam, tais como mobilidade, adequação postural, comunicação, recursos para cegos ou pessoas de baixa visão, para surdos ou pessoas com perdas auditivas, instrumentos que promovam independência em atividades da vida diária, recursos para educação, recreação, acessibilidade arquitetônica, adaptações de veículos, recursos para acesso ao computador, órteses, próteses e outros [9].
+\\\\
+Recursos de comunicação podem ser dos mais variados tipos. Projeta-se e constrói-se um recurso considerando as habilidades do usuário com o objetivo de ajudá-lo a superar sua deficiência. Um recurso após ser desenvolvido e aplicado poderá ser então aperfeiçoado, considerando as dificuldades de adaptação do indivíduo [9]. 
+\\\\
+Para atender pessoas sem fala, sem escrita funcional ou em defasagem entre sua necessidade comunicativa e sua habilidade em falar e/ou escrever, são utilizados recursos conhecidos como comunicação aumentativa e alternativa (CAA). A CAA serve para expressar suas questões, desejos, sentimentos, entendimentos. A alta tecnologia dos vocalizadores (pranchas com produção de voz) ou o computador com softwares específicos garantem grande eficiência à função comunicativa [5].
+
+\subsection{Disfunções motoras severas}
 Distúrbios neurológicos como a esclerose lateral amiotrófica (ELA) ou outras doenças musculares progressivas, conduzem frequentemente esses indivíduos à paralisia motora, inclusive com prejuízo a fala. Tornam-se, portanto, altamente limitados para suas atividades, inclusive com privação de suas vontades, devido à perda de comunicação.
-Esta patologia atinge cerca de 1 a 3 novos casos por cada 100,000 habitantes anualmente, tendo uma prevalência detida entre os 3 e os 7 por 100,000 habitantes/ano. Ainda por razões desconhecidas, o sexo masculino tem um predominância ligeiramente superior quando comparado com o feminino, com uma proporção M:F de 1,5:1 10. Habitualmente a idade média de aparecimento da doença ocorre entre os 55-65 anos de idade, embora em  alguns casos, cerca de 5% possa manifestar-se a partir da segunda década de vida11.
-Para alguns desses indivíduos o sistema de escaneamento é o único modo de acesso à comunicação verbal ou escrita. Esses fundamentos têm sido utilizados desde o início da década de 80: através de um sistema de varredura luminosa, um item é marcado na tela e então selecionado por um clique. A principal desvantagem desse método é a lentidão na comunicação com uma velocidade média de escaneamento entre 0,2 a 6 segundos7.
+\\\\
+Esta patologia atinge cerca de 1 a 3 novos casos por cada 100,000 habitantes anualmente, tendo uma prevalência detida entre os 3 e os 7 por 100,000 habitantes/ano. Ainda por razões desconhecidas, o sexo masculino tem um predominância ligeiramente superior quando comparado com o feminino, com uma proporção M:F de 1,5:1 [10]. Habitualmente a idade média de aparecimento da doença ocorre entre os 55-65 anos de idade, embora em  alguns casos, cerca de 5\% possa manifestar-se a partir da segunda década de vida [11].
+\\\\
+Para alguns desses indivíduos o sistema de escaneamento é o único modo de acesso à comunicação verbal ou escrita. Esses fundamentos têm sido utilizados desde o início da década de 80: através de um sistema de varredura luminosa, um item é marcado na tela e então selecionado por um clique. A principal desvantagem desse método é a lentidão na comunicação com uma velocidade média de escaneamento entre 0,2 a 6 segundos [7].
 
 \subsection{Edith}
-Uma ferramenta com esse objetivo é o EDITH (acronismo francês para Ambiente de Teleação Digital para Pessoas com Disfunções), desenvolvido na Universidade Metz, França; esse software foi originalmente desenvolvido para uma pessoa com ELA e instalado em um laptop.
+O EDITH (acronismo francês para Ambiente de Teleação Digital para Pessoas com Disfunções), desenvolvido na Universidade Metz, França, é um software de CAA, desenvolvido para pessoas com Esclerose Lateral Amiotrofica.
 
 \begin{figure}[H]
 \label{fig:edith_menu}
@@ -146,27 +159,149 @@ Trata-se de um sistema de auxílio à comunicação destinada a pessoas com defi
 
 O software foi desenvolvido na plataforma de desenvolvimento .NET da Microsoft, utilizando linguagem computacional C\# (CSharp). O aplicativo possui um gerador de registros (log) que grava as ações desempenhadas pelo usuário durante a execução do programa. O objetivo de vários pesquisadores que atuam na área de tecnologia assistiva tem sido a de aperfeiçoar esses softwares para uma melhor adaptação do usuário com a interface, permitindo menor esforço físico e melhor aproveitamento desses recursos. Indivíduos com disfunções motoras associados a distúrbios da fala frequentemente utilizam-se de recursos de comunicação como o EDITH, contudo, devido a velocidade que a escrita é executada, às vezes por limitações físicas desses pacientes, esses dispositivos tornam essa capacidade de comunicação uma tarefa de difícil execução. 
 
-
 %------------------------------------------------
-
 \section{Métodos}
 
-Esta é uma pesquisa do tipo experimental quantitativa, Com o objetivo de melhorar a velocidade de comunicação e diminuir esforços aos usuários do software EDITH, foi introduzida ao software a ferramenta “autocompletar” a caixa de texto, de modo a diminuir a frequência de seleção dos itens do painel. Para isso serão realizados alguns testes comparando a performance do usuário utilizando o recurso auto-completar e sem o mesmo. Com base nos registros de (log) do software, serão analisados alguns dados por meio de ferramentas estatísticas.
+\subsection{Experimento}
+Esta é uma pesquisa do tipo experimental quantitativa, baseada em dados estatísticos. Com o objetivo de melhorar a velocidade de comunicação e diminuir esforços aos usuários do software EDITH, foi desenvolvido uma ferramenta “autocompletar” ao teclado virtual, com o intuito de exigir um menor número de cliques para digitar uma palavra. Para isto serão realizados alguns testes comparando a performance de usuários utilizando o recurso autocompletar e sem o mesmo. Os voluntários foram classificados como indivíduos saudáveis, não sendo portadores de nenhuma disfunção motora. 
+\\\\
+Para estipular a sentença a ser usada para o teste, optou-se pelo emprego de um pangrama. Um pangrama é uma frase com sentido em que são usadas todas as letras do alfabeto de determinada língua. O pangrama utilizado para o teste possui 42 letras, sendo expresso pela seguinte frase: "Um pequeno jabuti xereta viu dez cegonhas felizes". 
 
-\subsection{Desenvolvimento da ferramenta autocompletar}
+Com base nos registros de eventos (log) do software, serão analisados os seguintes parâmetros oriundos da atividade de escrita com o software:
+\begin{itemize}
+\item Número de cliques executados pelo usuário;
+\item Intervalo médio entre os cliques;
+\item Taxa de acerto (\%);
+\item Taxa de erro(\%);
+\end{itemize}
 
-\subsection{Ensaios}
-Como ensaio foi proposto ao voluntário a escrita de uma frase no 
+\subsection{Tratamento dos registros}
 
+O EDITH registra todos os eventos de clique do usuário, armazenando a data, hora, tipo de ação e seu detalhe. A seguir pode-se visualizar um exemplo de log gerado pelo programa.
+
+\begin{lstlisting}
+2013-12-20 18:34:19,817 
+ActionKeySelectedFirstKeyboard|
+Key : U
+\end{lstlisting}
+
+Com base em sua estrutura, cada evento foi classificado nos seguintes tipos de ação:
+\begin{itemize}
+
+\item Key Selected FirstKeyboard
+\hfill \\
+  "Key" significa que algum caractere foi pressionado.
+\item Backspace Selected FirstKeyboard
+\hfill \\
+  "Backspace" significa que a tecla de retroceder foi pressionada.
+\item Column Selected FirstKeyboard
+\hfill \\
+  "Column" significa que a alguma coluna do teclado virtual foi selecionada durante a sua varredura.
+\item Space Selected FirstKeyboard
+\hfill \\
+  "Space" significa que foi inserido um espaço vazio na caixa de texto.
+\item Speech Selected FirstKeyboard
+\hfill \\
+  "Speech" significa que o botão para reproduzir em áudio a frase armazenada na caixa de texto.
+\end{itemize}
+
+Foram definidos como cliques do usuário todos os eventos disparados ("Key", "Backspace", "Column", "Space", "Speech", entre outros). A taxa de acerto foi definido como o total de caracteres digitados (associado aos eventos "Key" e "Space") subtraídos do número de caracteres que foram digitados de maneira errada. A taxa de erro, composta pelo número de caracteres digitados erroneamente, está associado ao disparo do evento "Backspace".
+A sensibilidade das letras serem maiúsculas ou minúsculas foi ignorada para esta aplicação, uma vez que este fator não atrapalhar o desempenho da comunicação.
 
 %------------------------------------------------
-
 \section{Resultados}
 
-%------------------------------------------------
+Após os ensaios foram coletados os seguintes dados dos usuários e organizados nas seguintes tabelas:
 
+\begin{table}[H]
+\caption{Dados do usuário 1}
+\centering
+\begin{tabular}{ccc}
+\toprule
+ Usuário 1 &  & \\
+\midrule
+Autocompletar & Não & Sim\\
+Duração (ms) & 282394 & 508249\\
+Número de cliques & 118 & 147\\
+Tempo médio por clique & 2393.17 & 3457.48\\
+N. de caracteres & 51 & 49\\
+N. de caracteres errados & 3 & 17\\
+Acerto (\%) & 94.12 & 65.31\\
+Erro (\%) & 5.88 &\ 34.69\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+\begin{table}[H]
+\caption{Dados do usuário 2}
+\centering
+\begin{tabular}{ccc}
+\toprule
+ Usuário 2 &  & \\
+\midrule
+Autocompletar & Não & Sim\\
+Duração (ms) & 243062 & 383033\\
+Número de cliques & 116 & 136\\
+Tempo médio por clique & 2095.36 & 2816.42\\
+N. de caracteres & 51 & 46\\
+N. de caracteres errados & 2 & 18\\
+Acerto (\%) & 96.08 & 60.87\\
+Erro (\%) & 3.92 &\ 39.13\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Com base dos dados foram construídos os seguintes gráficos para comparação entre as parâmetros estatísticos dos experimentos sem o uso da ferramenta de autocomplemento e com o seu uso:
+
+\begin{figure}[H]
+\label{fig:graph_tx}
+  \caption{Taxa percentual de acerto e erro}
+  \centering
+    \includegraphics[scale = 0.50]{graph_acertoerro.png}
+\end{figure}
+
+\begin{figure}[H]
+\label{fig:graph_d}
+  \caption{Duração da tarefa (em s)}
+  \centering
+    \includegraphics[scale = 0.50]{graph_duracao.png}
+\end{figure}
+
+\begin{figure}[H]
+\label{fig:graph_int}
+  \caption{Intervalo médio entre cliques (em ms)}
+  \centering
+    \includegraphics[scale = 0.50]{graph_intervalomed.png}
+\end{figure}
+
+\begin{figure}[H]
+\label{fig:graph_numcliq}
+  \caption{Número de cliques efetuados durante a tarefa}
+  \centering
+    \includegraphics[scale = 0.50]{graph_ncliques.png}
+\end{figure}
+
+\begin{figure}[H]
+\label{fig:graph_numcaractnec}
+  \caption{Número caracteres necessários para completar a tarefa}
+  \centering
+    \includegraphics[scale = 0.50]{graph_caractnec.png}
+\end{figure}
+
+%-----------------------------------------------
 \section{Discussão}
-
+Os resultados apontaram que o recurso de autocomplemento, na atual configuração, ainda não está adequado para uso. O aumento de tempo de 39\% e do número de cliques de 21\% para escrever a sentença podem ser interpretadas como ineficiência da atual ferramenta. Entretanto, tal problema pode ser justificado pelo fato de o recurso de autocomplemento selecionar palavras independente da relevância sintática que esta possui dentro da frase. 
+\\\\
+A dificuldade de se encontrar dicionários da lingua portuguesa, com valores de relevância pré-determinados, obrigou o desenvolvimento de um banco de dados com palavras sem atribuição deste atributo. Dessa forma, a busca por palavras no banco de dados se restringe a palavras iniciadas pelos caracteres digitados pelo usuário. 
+\\\\
+Para um caso em que o usuário digite os caracteres 'A' e 'B', serão retornadas algumas palavras pertencente ao espaço amostral de palavras do dicionário, iniciadas por "AB", independente da frequência com que a palavra é utilizada ou de seu contexto sintático. Isso acarreta no incremento da probabilidade do recurso autocompletar sugerir palavras que não atendam à necessidade do usuário, uma vez que a ferramenta limita o número de palavras sugeridas, afim de evitar um grande consumo de tempo durante a varredura por estas.
+\\\\
+O recurso instalado nesta aplicação é uma ferramenta estática, uma vez que não utiliza estratégias computacionais que possibilitem a aprendizagem do sistema, de forma a ajustar o atributo "peso" das palavras do dicionário.
+\\\\
+Em detrimento do aumento da quantidade de cliques efetuados pelo usuário, o número de caracteres necessários para gerar a sentença foi reduzido para um valor em torno de 7\%. Tal fator aponta o potencial da ferramenta que necessita de estratégias mais adequadas para atenuar os problemas detectados nos resultados do experimento.
+\\\\
+Após o experimento a busca por estratégias de análise de contexto, dicionários compostos por palavras com pesos associados a sua relevância sintática ou frequência de uso, são as possibilidades mais viáveis para que a melhoria do uso do sistema tenha êxito.
 
 %----------------------------------------------------------------------------------------
 %	REFERENCE LIST
@@ -196,13 +331,9 @@ Como ensaio foi proposto ao voluntário a escrita de uma frase no
 
 \bibitem _HAUSER SL, F., AS, EUGENE B, KASPER DL, LONGO DL, JAMESON JL, LOSCALZO J. Amyotrophic Lateral Sclerosis and Other Motor Neuron Diseases. Estados Unidos da América: McGraw-Hill Companies: 358-363 p. 2010.
 
-
-
-
 \end{thebibliography}
 
 %----------------------------------------------------------------------------------------
 
 \end{multicols}
-
 \end{document}
