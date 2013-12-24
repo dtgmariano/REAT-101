@@ -136,6 +136,40 @@ A principal desvantagem desse método é a lentidão na comunicação com uma ve
 
 \subsection{EDITH}
 O EDITH (acronismo francês para Ambiente de Teleação Digital para Pessoas com Disfunções), desenvolvido na Universidade Metz, França, é um software de CAA, desenvolvido para pessoas com Esclerose Lateral Amiotrofica.
+\noindent \\\\Trata-se de um sistema de auxílio à comunicação destinada a pessoas com deficiências motoras severas e que não estão aptas a se comunicarem. Ele é composto por um software que integra diversos recursos para controle de um ambiente multimídia de comunicação. 
+\noindent \\\\O software possui duas componentes principais: uma interface funcional e uma interface de configuração. A interface funcional oferece os seguintes módulos:
+
+\begin{enumerate}
+  \item Chamar
+  \begin{enumerate}
+    \item Equipe médica
+  \end{enumerate}
+  \item Falar
+  \begin{enumerate}
+    \item Frases prontas
+    \item Criar sentenças
+  \end{enumerate}
+  \item Escrever 
+    \begin{enumerate}
+    \item Teclado Virtual
+    \end{enumerate}
+  \item Ler
+  \item Funções multimídia
+  \begin{enumerate}
+    \item Assistir vídeos
+    \item Escutar músicas
+    \item Visualizar imagens
+  \end{enumerate}
+  \item Controle do ambiente
+  \begin{enumerate}
+    \item Controlar remotamente a televisão
+    \item Alarmes
+  \end{enumerate}
+\end{enumerate}
+
+\noindent \\A interface de configuração permite ao usuário ajustar a operação de diversas funcionalidades como, por exemplo, tempo de varredura do teclado virtual, adicionar arquivos no banco de dados e cadastrar e-mails.
+
+\noindent \\As opções para seleção (menus, eventos, itens) são representandos por botões na interface. A seleção de cada opção se dá com apoio de um mecanismo de varredura automática e de um dispositivo de interfaceamento entre usuário e computador (IHM). 
 
 \begin{figure}[H]
 \label{fig:edith_menu}
@@ -144,19 +178,16 @@ O EDITH (acronismo francês para Ambiente de Teleação Digital para Pessoas com
     \includegraphics[scale = 0.19]{edith_menu.png}
 \end{figure}
 
-\noindent Trata-se de um sistema de auxílio à comunicação destinada a pessoas com deficiências motoras severas e que não estão aptas a se comunicarem. Ele é composto por um software que integra diversos recursos para controle de um ambiente multimídia de comunicação. 
-\noindent \\\\Para o sistema de seleção costuma-se aplicar o modo linha-coluna (ou coluna-linha), por proporcionar um menor dispêndio de esforço físico e mental nessas ações. O sistema de seleção pode também ser sequencial, se a disponibilidade de opções não for muito ampla. 
+\noindent Alguns exemplos destes dispositivos são:
+\begin{itemize}
+\item Botão mecânico adaptado para captura de toque
+\item Acelerômetro para captura de movimentos
+\item EMG para captura de sinais fisiológicos oriundos da atividade muscular
+\item EOG para captura de sinais fisiológicos oriundos da retina ocular
+\item EEG para captura de sinais fisiológicos oriundos da atividade do córtex cerebral
+\end{itemize}
 
-\begin{figure}[H]
-\label{fig:edith_tecladovirtual}
-  \caption{Teclado virtual.}
-  \centering
-    \includegraphics[scale = 0.19]{edith_tecladovirtual.png}
-\end{figure}
-
-\noindent É possível ajustar o parâmetro temporal de acordo com a personalidade e as habilidades físicas e cognitivas do usuário; pode ser diminuído quando o usuário adquirir experiência com a interface, ou aumentado, se houver deterioração da função por agravo da enfermidade. 
-
-\noindent \\O sistema EDITH foi projetado para computadores padrão IBM-PC e possui duas componentes principais: uma interface funcional e uma interface de configuração. A interface funcional oferece várias facilidades como avisos e chamadas sonoras do pessoal de enfermagem, leitura de textos e escrita de texto. A interface de configuração permite ao usuário ajustar a operação de diversas funcionalidades como tempo de varredura do teclado virtual, adicionar livros, filmes, músicas no banco de dados e cadastrar e-mails.
+\noindent É possível ajustar o tempo de varredura das opções, de acordo com a personalidade e as habilidades físicas e cognitivas do usuário; pode ser diminuído quando o usuário adquirir experiência com a interface, ou aumentado, se houver deterioração da função por agravo da enfermidade. 
 
 \begin{figure}[H]
 \label{fig:edith_chamar}
@@ -165,17 +196,35 @@ O EDITH (acronismo francês para Ambiente de Teleação Digital para Pessoas com
     \includegraphics[scale = 0.19]{edith_chamar.png}
 \end{figure}
 
-\noindent O software foi desenvolvido na plataforma de desenvolvimento .NET da Microsoft, utilizando linguagem computacional C\# (CSharp). O aplicativo possui um gerador de registros (log) que grava as ações desempenhadas pelo usuário durante a execução do programa. O objetivo de vários pesquisadores que atuam na área de tecnologia assistiva tem sido a de aperfeiçoar esses softwares para uma melhor adaptação do usuário com a interface, permitindo menor esforço físico e melhor aproveitamento desses recursos. Indivíduos com disfunções motoras associados a distúrbios da fala frequentemente utilizam-se de recursos de comunicação como o EDITH, contudo, devido a velocidade que a escrita é executada, às vezes por limitações físicas desses pacientes, esses dispositivos tornam essa capacidade de comunicação uma tarefa de difícil execução. 
+\begin{figure}[H]
+\label{fig:edith2}
+  \caption{Módulo para de frases prontas.}
+  \centering
+    \includegraphics[scale = 0.19]{Edith_2_Falar.png}
+\end{figure}
+
+\noindent \\O módulo de escrita é composto por um teclado virtual composto por símbolos (letras, números, etc) dispostos em colunas e linhas. O software evidência uma coluna de cada vez e, caso aquela seja a coluna desejada, o usuário deve selecioná-la. Em seguida, a varredura muda para as linhas da coluna selecionada, colocando cada caractere em evidência. Da mesma forma, quando o caractere desejado é colocado em evidência o usuário deve selecioná-lo. Assim, um texto poderá ser escrito no editor virtual. O texto pode ser reproduzido em áudio pelo gerador de voz embarcado no sistema.
+
+\begin{figure}[H]
+\label{fig:edith_tecladoVirtual}
+  \caption{Módulo de teclado virtual.}
+  \centering
+    \includegraphics[scale = 0.19]{Edith_3_Escrever.png}
+\end{figure}
+
+
+\noindent O software foi projetado para computadores padrão IBM-PC, sendo desenvolvido na plataforma de desenvolvimento .NET da Microsoft, utilizando linguagem computacional C\# (CSharp). O aplicativo possui um gerador de registros (log) que grava as ações desempenhadas pelo usuário durante a execução do programa.
+\noindent \\\\O objetivo de vários pesquisadores que atuam na área de tecnologia assistiva tem sido a de aperfeiçoar esses softwares para uma melhor adaptação do usuário com a interface, permitindo menor esforço físico e melhor aproveitamento desses recursos. Indivíduos com disfunções motoras associados a distúrbios da fala frequentemente utilizam-se de recursos de comunicação como o EDITH, contudo, devido a velocidade que a escrita é executada, às vezes por limitações físicas desses pacientes, esses dispositivos tornam essa capacidade de comunicação uma tarefa de difícil execução. 
 
 %------------------------------------------------
 \section{Métodos}
 
 \subsection{Experimento}
-Esta é uma pesquisa do tipo experimental quantitativa, baseada em dados estatísticos. Com o objetivo de melhorar a velocidade de comunicação e diminuir esforços aos usuários do software EDITH, foi desenvolvido uma ferramenta “autocompletar” ao teclado virtual, com o intuito de exigir um menor número de cliques para digitar uma palavra. Para isto serão realizados alguns testes comparando a performance de usuários utilizando o recurso autocompletar e sem o mesmo. Os voluntários foram classificados como indivíduos saudáveis, não sendo portadores de nenhuma disfunção motora. 
+Esta é uma pesquisa do tipo experimental quantitativa, baseada em dados estatísticos. Com o objetivo de melhorar a velocidade de comunicação e diminuir esforços aos usuários do software EDITH, foi desenvolvido uma ferramenta “autocompletar” ao teclado virtual, com o intuito de exigir um menor número de cliques para digitar uma palavra. Para isto foram realizados alguns testes comparando a performance de usuários utilizando o recurso autocompletar e sem o mesmo. Os voluntários foram classificados como indivíduos saudáveis, não sendo portadores de nenhuma disfunção motora. 
 \\\\
 Para estipular a sentença a ser usada para o teste, optou-se pelo emprego de um pangrama. Um pangrama é uma frase com sentido em que são usadas todas as letras do alfabeto de determinada língua. O pangrama utilizado para o teste possui 42 letras, sendo expresso pela seguinte frase: "Um pequeno jabuti xereta viu dez cegonhas felizes". 
 \\\\
-Com base nos registros de eventos (log) do software, serão analisados os seguintes parâmetros oriundos da atividade de escrita com o software:
+Com base nos registros de eventos (log) do software, foram analisados os seguintes parâmetros oriundos da atividade de escrita com o software:
 \begin{itemize}
 \item Número de cliques executados pelo usuário;
 \item Intervalo médio entre os cliques;
@@ -214,7 +263,7 @@ Com base em sua estrutura, cada evento foi classificado nos seguintes tipos de a
 \end{itemize}
 
 \noindent Foram definidos como cliques do usuário todos os eventos disparados ("Key", "Backspace", "Column", "Space", "Speech", entre outros). A taxa de acerto foi definido como o total de caracteres digitados (associado aos eventos "Key" e "Space") subtraídos do número de caracteres que foram digitados de maneira errada. A taxa de erro, composta pelo número de caracteres digitados erroneamente, está associado ao disparo do evento "Backspace".
-A sensibilidade das letras serem maiúsculas ou minúsculas foi ignorada para esta aplicação, uma vez que este fator não atrapalhar o desempenho da comunicação.
+A sensibilidade das letras serem maiúsculas ou minúsculas foi ignorada para esta aplicação, uma vez que este fator não atrapalha o desempenho da comunicação.
 
 %------------------------------------------------
 \section{Resultados}
@@ -301,7 +350,7 @@ Erro (\%) & 3.92 &\ 39.13\\
 \section{Discussão}
 Os resultados apontaram que o recurso de autocomplemento, na atual configuração, ainda não está adequado para uso. O aumento de tempo de 39\% e do número de cliques de 21\% para escrever a sentença podem ser interpretadas como ineficiência da atual ferramenta. Entretanto, tal problema pode ser justificado pelo fato de o recurso de autocomplemento selecionar palavras independente da relevância sintática que esta possui dentro da frase. 
 
-\noindent \\A dificuldade de se encontrar dicionários da lingua portuguesa, com valores de relevância pré-determinados, obrigou o desenvolvimento de um banco de dados com palavras sem atribuição deste atributo. Dessa forma, a busca por palavras no banco de dados se restringe a palavras iniciadas pelos caracteres digitados pelo usuário. 
+\noindent \\A dificuldade de se encontrar dicionários da lingua portuguesa, com valores de relevância pré-determinados, obrigou o desenvolvimento de um banco de dados com palavras sem atribuição desta característica. Dessa forma, a busca por palavras no banco de dados se restringe a palavras iniciadas pelos caracteres digitados pelo usuário. 
 
 \noindent \\Para um caso em que o usuário digite os caracteres 'A' e 'B', serão retornadas algumas palavras pertencente ao espaço amostral de palavras do dicionário, iniciadas por "AB", independente da frequência com que a palavra é utilizada ou de seu contexto sintático. Isso acarreta no incremento da probabilidade do recurso autocompletar sugerir palavras que não atendam à necessidade do usuário, uma vez que a ferramenta limita o número de palavras sugeridas, afim de evitar um grande consumo de tempo durante a varredura por estas.
 
