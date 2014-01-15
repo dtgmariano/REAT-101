@@ -1,6 +1,6 @@
 #include <AcceleroMMA7361.h>
 #define _delay (unsigned long)0x1ff
-#define _sens 2
+#define _sens 4
 
 AcceleroMMA7361 accelero;
 
@@ -34,7 +34,8 @@ void setup()
 void loop()
 {
   t = accelero.getTotalVector()/10;
-  
+  //t = accelero.getTotalVector();
+
   if(t < minVal)
   {
     //Descida
@@ -45,19 +46,10 @@ void loop()
   {
       if(((t - minVal) > (amp + _sens)) && (!ignoreClick))
       {
-        /*Serial.print("\nClick");
-        Serial.print("min = ");
-        Serial.print(minVal);
-        Serial.print(", max = ");
-        Serial.print(maxVal);
-        Serial.print(", val = ");
-        Serial.print(t);
-        Serial.print("\n");*/
         Serial.print("C");
         minVal = t;
         maxVal = t + amp;
         ignoreClick = _delay;
-        //enable inte
       }
   }
   
@@ -66,16 +58,7 @@ void loop()
     minVal = t;
     maxVal = t + amp;    
     ignoreClick--;
-  }
-  /*Serial.print("min = ");
-  Serial.print(minVal);
-  Serial.print(", max = ");
-  Serial.print(maxVal);
-  Serial.print(", val = ");
-  Serial.print(t);
-  Serial.print("\n");
-  // send it to the computer as ASCII digits
-  delay(50);        // delay in between reads for stability  */    
+  } 
 }
 
 
