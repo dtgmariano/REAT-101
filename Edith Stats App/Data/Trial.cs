@@ -34,7 +34,6 @@ namespace Edith_Stats_App
             this.error = 100.0 * (double)(this.numWrongKeysPressed) / (double)this.numCharactersPressed;
         }
 
-
         private List<Info> retrievesInfo(System.IO.StreamReader log)
         {
             List<Info> information = new List<Info>();
@@ -85,8 +84,8 @@ namespace Edith_Stats_App
             {
                 for (int i = 1; i < informationSize + 1; i++)
                 {
-                    if ((informationContent[i].action == Action.Options.ActionKeySelectedFirstKeyboard ||
-                        informationContent[i].action == Action.Options.ActionSpaceSelectedFirstKeyboard) &&
+                    if ((informationContent[i].action == Options.Actions.ActionKeySelectedFirstKeyboard ||
+                        informationContent[i].action == Options.Actions.ActionSpaceSelectedFirstKeyboard) &&
                         (informationContent[i].actionDetail != "None") && 
                         (informationContent[i].datetime != informationContent[i - 1].datetime))
                     {
@@ -102,8 +101,8 @@ namespace Edith_Stats_App
             {
                 for (int i = 1; i < informationSize + 1; i++)
                 {
-                    if (informationContent[i].action == Action.Options.ActionKeySelectedFirstKeyboard ||
-                        informationContent[i].action == Action.Options.ActionSpaceSelectedFirstKeyboard)
+                    if (informationContent[i].action == Options.Actions.ActionKeySelectedFirstKeyboard ||
+                        informationContent[i].action == Options.Actions.ActionSpaceSelectedFirstKeyboard)
                     {
                         numberOfCharactersPressed++;
                     }
@@ -123,7 +122,7 @@ namespace Edith_Stats_App
 
             for (int i = 1; i < informationSize + 1; i++)
             {
-                if (informationContent[i].action == Action.Options.ActionBackspaceSelectedFirstKeyboard)
+                if (informationContent[i].action == Options.Actions.ActionBackspaceSelectedFirstKeyboard)
                 {
                     numberOfWrongCharactersPressed++;
                 }

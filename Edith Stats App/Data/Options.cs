@@ -5,9 +5,9 @@ using System.Text;
 
 namespace Edith_Stats_App
 {
-    public static class Action
+    public static class Options
     {
-        public enum Options
+        public enum Actions
         {
             ActionBackspaceSelectedFirstKeyboard,
             ActionColumnSelectedFirstKeyboard,
@@ -22,6 +22,25 @@ namespace Edith_Stats_App
             ActionSaveSelectedFirstKeyboard,
             ActionSpaceSelectedFirstKeyboard,
             ActionSpeechSelectedFirstKeyboard
+        }
+
+        public enum TrialCategory
+        {
+            MouseConfiguration,
+            AccelerometerHandConfiguration, //Accelerometer positioned at the hand
+            AccelerometerShoulderConfiguration  //Accelerometer positioned at the shoulder
+        }
+
+        public enum Gender
+        {
+            Feminino,
+            Masculino
+        }
+
+        public enum Laterality
+        {
+            Direita,
+            Esquerda
         }
 
         //public static readonly Dictionary<Options, string> OptionsTypes = new Dictionary<Options, string>()

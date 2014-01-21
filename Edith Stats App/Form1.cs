@@ -135,8 +135,8 @@ namespace Edith_Stats_App
                 int idx = 2;
                 foreach(Info info in trial.informationContent)
                 {
-                    if (info.action == Action.Options.ActionKeySelectedFirstKeyboard ||
-                        info.action == Action.Options.ActionSpaceSelectedFirstKeyboard && 
+                    if (info.action == Options.Actions.ActionKeySelectedFirstKeyboard ||
+                        info.action == Options.Actions.ActionSpaceSelectedFirstKeyboard && 
                         info.actionDetail != "None")
                     {
                         xlWorkSheet3.Cells[idx, 1] = info.datetime.Date;

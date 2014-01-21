@@ -8,7 +8,7 @@ namespace Edith_Stats_App
     public class Info
     {
         public DateTime datetime;
-        public Action.Options action;
+        public Options.Actions action;
         public string actionDetail;
 
         public Info(string line)
@@ -28,37 +28,37 @@ namespace Edith_Stats_App
             {
                 case 'B':
                 {
-                    this.action = Action.Options.ActionBackspaceSelectedFirstKeyboard;
+                    this.action = Options.Actions.ActionBackspaceSelectedFirstKeyboard;
                     this.actionDetail = line.Substring(61, line.Length - 61);
                     break;
                 }
                 case 'C':
                 {
-                    this.action = Action.Options.ActionColumnSelectedFirstKeyboard;
+                    this.action = Options.Actions.ActionColumnSelectedFirstKeyboard;
                     this.actionDetail = line.Substring(58, line.Length - 58);
                     break;
                 }
                 case 'K':
                 {
-                    this.action = Action.Options.ActionKeySelectedFirstKeyboard;
+                    this.action = Options.Actions.ActionKeySelectedFirstKeyboard;
                     this.actionDetail = line.Substring(61, line.Length - 61);
                     break;
                 }
                 case 'L':
                 {
-                    this.action = Action.Options.ActionLeftSelectedFirstKeyboard;
+                    this.action = Options.Actions.ActionLeftSelectedFirstKeyboard;
                     this.actionDetail = line.Substring(32, line.Length - 32);
                     break;
                 }
                 case 'R':
                 {
-                    this.action = Action.Options.ActionRightSelectedFirstKeyboard;
+                    this.action = Options.Actions.ActionRightSelectedFirstKeyboard;
                     this.actionDetail = line.Substring(33, line.Length - 33);
                     break;
                 }
                 case 'S':
                 {
-                    this.action = Action.Options.ActionSpaceSelectedFirstKeyboard;
+                    this.action = Options.Actions.ActionSpaceSelectedFirstKeyboard;
                     this.actionDetail = line.Substring(57, line.Length - 57);
                     break;
                 }

@@ -35,10 +35,10 @@
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.rtbInfo = new System.Windows.Forms.RichTextBox();
-            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.rtbInfo = new System.Windows.Forms.RichTextBox();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -92,17 +92,9 @@
             // statsToolStripMenuItem
             // 
             this.statsToolStripMenuItem.Name = "statsToolStripMenuItem";
-            this.statsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.statsToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
             this.statsToolStripMenuItem.Text = "Stats";
             this.statsToolStripMenuItem.Click += new System.EventHandler(this.statsToolStripMenuItem_Click);
-            // 
-            // rtbInfo
-            // 
-            this.rtbInfo.Location = new System.Drawing.Point(12, 27);
-            this.rtbInfo.Name = "rtbInfo";
-            this.rtbInfo.Size = new System.Drawing.Size(492, 398);
-            this.rtbInfo.TabIndex = 2;
-            this.rtbInfo.Text = "";
             // 
             // helpToolStripMenuItem
             // 
@@ -115,8 +107,16 @@
             // aboutToolStripMenuItem1
             // 
             this.aboutToolStripMenuItem1.Name = "aboutToolStripMenuItem1";
-            this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(107, 22);
             this.aboutToolStripMenuItem1.Text = "About";
+            // 
+            // rtbInfo
+            // 
+            this.rtbInfo.Location = new System.Drawing.Point(12, 136);
+            this.rtbInfo.Name = "rtbInfo";
+            this.rtbInfo.Size = new System.Drawing.Size(492, 289);
+            this.rtbInfo.TabIndex = 2;
+            this.rtbInfo.Text = "";
             // 
             // Form1
             // 
