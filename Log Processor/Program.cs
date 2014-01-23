@@ -15,7 +15,7 @@ namespace Log_Processor
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TrialMenu());
+            Application.Run(new TrialForm());
         }
     }
 }

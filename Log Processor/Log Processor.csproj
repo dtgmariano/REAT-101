@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Log_Processor</RootNamespace>
     <AssemblyName>Log Processor</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -22,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -31,6 +32,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
@@ -51,25 +53,7 @@
     <Compile Include="DataModules\Info.cs" />
     <Compile Include="DataModules\Task.cs" />
     <Compile Include="DataModules\User.cs" />
-    <Compile Include="MenuModules\HelpMenu\HelpMenu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MenuModules\HelpMenu\HelpMenu.Designer.cs">
-      <DependentUpon>HelpMenu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MenuModules\MainMenu\MainMenu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MenuModules\MainMenu\MainMenu.Designer.cs">
-      <DependentUpon>MainMenu.cs</DependentUpon>
-    </Compile>
     <Compile Include="DataModules\Options.cs" />
-    <Compile Include="MenuModules\UsersMenu\UsersMenu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MenuModules\UsersMenu\UsersMenu.Designer.cs">
-      <DependentUpon>UsersMenu.cs</DependentUpon>
-    </Compile>
     <Compile Include="Modules\UsersForm\UserForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,27 +62,21 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Modules\TaskForm\TaskForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\TaskForm\TaskForm.Designer.cs">
+      <DependentUpon>TaskForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataModules\Trial.cs" />
     <Compile Include="Modules\TrialForm\TrialForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Modules\TrialForm\TrialForm.Designer.cs">
       <DependentUpon>TrialForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="DataModules\Trial.cs" />
-    <Compile Include="MenuModules\TrialMenu\TrialMenu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MenuModules\TrialMenu\TrialMenu.Designer.cs">
-      <DependentUpon>TrialMenu.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="MenuModules\MainMenu\MainMenu.resx">
-      <DependentUpon>MainMenu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MenuModules\TrialMenu\TrialMenu.resx">
-      <DependentUpon>TrialMenu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MenuModules\UsersMenu\UsersMenu.resx">
-      <DependentUpon>UsersMenu.cs</DependentUpon>
+    <EmbeddedResource Include="Modules\TrialForm\TrialForm.resx">
+      <DependentUpon>TrialForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\UsersForm\UserForm.resx">
       <DependentUpon>UserForm.cs</DependentUpon>
@@ -113,8 +91,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Modules\TrialForm\TrialForm.resx">
-      <DependentUpon>TrialForm.cs</DependentUpon>
+    <EmbeddedResource Include="Modules\TaskForm\TaskForm.resx">
+      <DependentUpon>TaskForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="Properties\Settings.settings">
@@ -147,6 +125,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\1390297407_help-browser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\DataSources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1390334939_play.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1390416797_document-save-as.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
