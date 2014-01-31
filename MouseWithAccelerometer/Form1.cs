@@ -35,7 +35,7 @@ namespace MouseWithAccelerometer
             {
                 try
                 {
-                mySerialPort.PortName = "COM6";
+                    mySerialPort.PortName = "COM4";
                     mySerialPort.BaudRate = 9600;
                     mySerialPort.Open();
                     btConnectIsPressed = true;
